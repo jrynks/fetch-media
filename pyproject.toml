@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fetch-media"
+version = "1.0.0"
+description = "Thin yt-dlp wrapper CLI for agents — compact JSON path chips, public URLs only."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "fetch-media" }]
+keywords = ["yt-dlp", "cli", "media", "agents"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia",
+]
+dependencies = ["yt-dlp>=2024.1.0"]
+
+[project.scripts]
+fetch-media = "fetch_media.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jrynks/fetch-media"
+
+[tool.setuptools.packages.find]
+include = ["fetch_media*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+fetch_media = ["py.typed"]
